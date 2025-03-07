@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamLy</title>
+    <link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/cfb2602f3e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+			<div class="logo">
+				<button class="menu-button" onclick="toggleSidebar()">☰</button>
+				<h1> TeamLy</h1>
+			</div>
+			<div class="account-menu" onclick="toggleAccountMenu()">
+                <i class="fa-regular fa-user"></i>
+                <div class="account-dropdown" id="accountDropdown">
+					<button id = "settings-button"><i class="fa-solid fa-gear"></i> Account Settings</button>
+                    <button id = "theme-button"onclick="toggleTheme()"><i class="fa-solid fa-moon"></i> Toggle Theme</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <button onclick="switchView('task-list')"><i class="fa-solid fa-list"></i> <span>Task List View</span></button>
+            <button onclick="switchView('calendar')"><i class="fa-solid fa-calendar"></i> <span>Calendar View</span></button>
+			
+        </div>
+
+        <div class="main-content" id="mainContent">
+            <div id="task-list-view" class="view">
+                <h2>Task List</h2>
+                <div class="task-form">
+                    <input type="text" id="newTask" placeholder="New Task">
+                    <input type="date" id="taskDate">
+                    <button onclick="addTask()">Add Task</button>
+                </div>
+                <div id="taskList"></div>
+            </div>
+            <div id="calendar-view" class="view" style="display: none;">
+                <h2>Calendar</h2>
+                <div class="calendar-controls">
+                    <button onclick="changeMonth(-1)">Prev</button>
+                    <span id="currentMonth"></span>
+                    <button onclick="changeMonth(1)">Next</button>
+                </div>
+                <div class="calendar" id="calendar"></div>
+            </div>
+			<button class="chat-button" onclick="toggleChat()"><i class="fa-solid fa-comments"></i> <span>Chat</span></button>
+			<div class="chat-box" id="chatBox">
+				<div class="chat-header" onclick="toggleChat()">Team Chat</div>
+				<div class="chat-body" id="chatBody"></div>
+				<div class="chat-footer">
+					<input type="text" id="chatInput" placeholder="Type a message...">
+					<button onclick="sendMessage()">Send</button>
+				</div>
+			</div>
+		</div>
+    </div>
+	<script src="script.js"></script>
+</body>
+</html>

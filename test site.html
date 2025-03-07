@@ -8,6 +8,12 @@
 	<script src="https://kit.fontawesome.com/cfb2602f3e.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="overlay" onclick="closeProfilePopup()"></div>
+    <div class="profile-popup" id="profilePopup">
+        <button class="close-popup" onclick="closeProfilePopup()">✖</button>
+        <img src="test.png" id="popupProfilePicture" >
+    </div>
+
     <div class="container">
         <div class="top-bar">
 			<div class="logo">
@@ -15,7 +21,7 @@
 				<h1> TeamLy</h1>
 			</div>
 			<div class="account-menu" onclick="toggleAccountMenu()">
-                <i class="fa-regular fa-user"></i>
+                <img class="ProfilePicture" src="test.png">
                 <div class="account-dropdown" id="accountDropdown">
 					<button id = "settings-button"><i class="fa-solid fa-gear"></i> Account Settings</button>
                     <button id = "theme-button"onclick="toggleTheme()"><i class="fa-solid fa-moon"></i> Toggle Theme</button>

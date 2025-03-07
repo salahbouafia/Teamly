@@ -72,6 +72,17 @@ function toggleAccountMenu() {
   document.getElementById("accountDropdown").classList.toggle("show");
 }
 
+document.querySelector(".ProfilePicture").addEventListener("click", function () {
+    document.getElementById("profilePopup").style.display = "block";
+    document.querySelector(".overlay").style.display = "block";
+  });
+  
+  function closeProfilePopup() {
+    document.getElementById("profilePopup").style.display = "none";
+    document.querySelector(".overlay").style.display = "none";
+  }
+  
+
 ///////////////////////////////////////////////////////////////////////////////
 
 // var chatButton = document.getElementById("chat-button");

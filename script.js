@@ -68,20 +68,25 @@ function toggleTheme() {
 
 ///////////////////////////////////////////////////////////////////////////////
 
-function toggleAccountMenu() {
-  document.getElementById("accountDropdown").classList.toggle("show");
+function toggleAccountMenu(action) {
+    const accountDropdown = document.getElementById("accountDropdown");
+    const overlay = document.querySelector(".overlay");
+
+    if (action === 'display') {
+        accountDropdown.classList.add("show");
+        overlay.classList.add("show");
+    } 
+    
+    else if (action === 'hide') {
+        accountDropdown.classList.remove("show");
+        overlay.classList.remove("show");
+    }
 }
 
-document.querySelector(".ProfilePicture").addEventListener("click", function () {
-    document.getElementById("profilePopup").style.display = "block";
-    document.querySelector(".overlay").style.display = "block";
-  });
-  
-  function closeProfilePopup() {
-    document.getElementById("profilePopup").style.display = "none";
-    document.querySelector(".overlay").style.display = "none";
-  }
-  
+document.querySelector(".close-popup").addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevents clicks on .close-popup from reopening the dropdown
+    toggleAccountMenu('hide');
+});
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -128,3 +133,42 @@ function addTask() {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+
+(function(){
+	if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+		window.chatbase=(...arguments)=>{
+			if(!window.chatbase.q){
+				window.chatbase.q=[]
+				}
+			window.chatbase.q.push(arguments)
+			};
+			window.chatbase=new Proxy(window.chatbase,{get(target,prop){
+				if(prop==="q"){
+					return target.q
+					}
+				return(...args)=>target(prop,...args)
+				}
+			})	
+		}
+		const onLoad=function(){
+			const script=document.createElement("script");
+			script.src="https://www.chatbase.co/embed.min.js";
+			script.id="EW7k6gW4a3UODn12zFtBF";script.domain="www.chatbase.co";
+			document.body.appendChild(script)};
+		if(document.readyState==="complete"){
+			onLoad()
+		}else{
+			window.addEventListener("load",onLoad)
+		}
+})();
+
+let AiChatOpen = false;
+
+function openAI () {
+	if(!AiChatOpen){
+		window.chatbase('open');
+	}else if (AiChatOpen){
+		window.chatbase('closeWidget')
+	}
+	AiChatOpen = !AiChatOpen;
+}

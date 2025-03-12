@@ -5,8 +5,8 @@ $username = $data['username'];
 $password = $data['password'];
 
 $users = [];
-if (file_exists('users.json')) {
-    $users = json_decode(file_get_contents('users.json'), true);
+if (file_exists('../users.json')) {
+    $users = json_decode(file_get_contents('../users.json'), true);
 }
 
 if (array_key_exists($username, $users) && $users[$username] === $password) {

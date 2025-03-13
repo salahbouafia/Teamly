@@ -14,7 +14,7 @@ function signup() {
         .then(data => {
             messageElement.textContent = data.message;
             if (data.success) {
-                window.location.href = 'login.html'; // Redirect on successful signup
+                window.location.href = '../login/login.html'; // Redirect on successful signup
             }
         })
         .catch(error => {

@@ -84,7 +84,7 @@ function toggleAccountMenu(action) {
 }
 
 document.querySelector(".close-popup").addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevents clicks on .close-popup from reopening the dropdown
+    event.stopPropagation();
     toggleAccountMenu('hide');
 });
 
@@ -129,6 +129,7 @@ function addTask() {
         tasks.push({ title: taskInput.value, date: taskDate });
         updateCalendar();
         taskInput.value = "";
+        switchView("calendar");
     }
 }
 

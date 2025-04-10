@@ -13,7 +13,7 @@
         <div class="top-bar">
 			<div class="logo">
 				<button class="menu-button" onclick="toggleSidebar()">☰</button>
-				<h1> TeamLy</h1>
+				<h1 style="display: flex;"> TeamLy</h1>
 			</div>
 			<div class="account-menu" onclick="toggleAccountMenu('display')">
                 <img class="ProfilePicture" src="test.png">
@@ -30,21 +30,50 @@
         </div>
 
         <div class="sidebar" id="sidebar">
-            <button onclick="switchView('task-list')"><i class="fa-solid fa-list"></i> <span>Task List View</span></button>
-            <button onclick="switchView('calendar')"><i class="fa-solid fa-calendar"></i> <span>Calendar View</span></button>
-			
+            <button onclick="switchView('task-list')"><i class="fa-solid fa-list"></i> <span>Active Tasks</span></button>
+            <button onclick="switchView('calendar')"><i class="fa-solid fa-calendar"></i> <span>Calendar</span></button>
+            <button onclick="switchView('projects')"><i class="fa-solid fa-projects"></i> <span>Projects</span></button>
+            <button onclick="switchView('notifications')"><i class="fa-solid fa-notifications"></i> <span>Notifications</span></button>
+            <button onclick="switchView('reports')"><i class="fa-solid fa-reports"></i> <span>reports</span></button>
+            <button onclick="switchView('taskHistory')"><i class="fa-solid fa-reports"></i> <span>Task History</span></button>
+
         </div>
 
         <div class="main-content" id="mainContent">
+
+            <!-- Task list  -->
             <div id="task-list-view" class="view">
                 <h2>Task List</h2>
                 <div class="task-form">
                     <input type="text" id="newTask" placeholder="New Task">
                     <input type="date" id="taskDate">
-                    <button onclick="addTask()">Add Task</button>
+                    <button onclick="addTask()">Add a Task +</button>
                 </div>
-                <div id="taskList"></div>
+                <div class="task-list">
+                    <div class="task-line">
+                        <div style="color: gray;">Task</div>
+                        <div>Title</div>
+                        <div>Project</div>
+                        <div>Priority</div>
+                        <div>Date</div>
+                        <div>Owner</div>
+                    </div>
+                    <hr>
+                    <div class="task-line">
+                        <div style="color: gray;">TSK-123</div>
+                        <div>Doing something useful</div>
+                        <div style="display: flex;"><div style="border: 1px solid gray; border-radius: 20px; padding: 0px 4px;"> Project 1</div></div>
+                        <div>flag</div>
+                        <div>Dec 5</div>
+                        <div>me</div>
+                        <div>...</div>
+                    </div>
+                    <hr>
+
+                </div>
             </div>
+
+            <!-- Calendar -->
             <div id="calendar-view" class="view" style="display: none;">
                 <h2>Calendar</h2>
                 <div class="calendar-controls">

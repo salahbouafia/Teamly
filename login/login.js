@@ -13,7 +13,7 @@ function login() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = '../main/test site.html'; // Redirect on successful login
+                window.location.href = '../main/teamly.html'; // Redirect on successful login
             } else {
                 messageElement.textContent = data.message;
             }

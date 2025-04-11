@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
+    <h1>Teamly</h1>
     <div class="container">
-        <h2>Login</h2>
+        <h2>Welcome Back!</h2>
+        <p>Enter your email and password to log-in</p>
         <div class="form-group">
-            <label for="loginUsername">Username</label>
-            <input type="text" id="loginUsername" name="loginUsername">
-        </div>
-        <div class="form-group">
-            <label for="loginPassword">Password</label>
-            <input type="password" id="loginPassword" name="loginPassword">
+            <label for="loginUsername"></label><input type="email" id="loginUsername" name="loginUsername" placeholder="email@example.com" required>
+            <label for="loginPassword"></label><input type="password" id="loginPassword" name="loginPassword" placeholder="password" required>
         </div>
         <button onclick="login()">Login</button>
-        <p class="toggle-form"><a href="../signup/signup.html">Sign up</a></p>
+        <div class="divider">
+            <hr><span>or continue with</span><hr>
+        </div>
+        <div class="googlebutton">
+            <img src="google.png" alt="google"> Google
+        </div>
+        <p class="toggle-form"><h5>Don't have an account? then Create one <a href="../signup/signup.html">Here</a></h5>
         <p id="message"></p>
     </div>
     <script src="login.js"></script>

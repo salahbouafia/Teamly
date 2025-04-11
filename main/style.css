@@ -22,11 +22,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2d2d2d;
-  background-image: url(../img/REALfond3.png);
+  background: #2d2d2d url(../img/REALfond3.png) center;
   border: 5px solid #6bbea2;
   color: rgb(0, 0, 0);
-  padding: 0px 20px;
+  padding: 0 20px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -141,17 +140,16 @@ body {
 }
 .sidebar {
   width: 225px;
-  background: #2d2d2d;
-  background-image: url(../img/REALfond3.png);
+  background: #2d2d2d url(../img/REALfond3.png) center;
   border: 5px solid #6bbea2;
   color: white;
-  padding: 50px 5px;
+  padding: 20px 5px;
   display: flex;
   flex-direction: column;
   gap: 5px;
   height: 100%;
   position: fixed;
-  top: 50px;
+  top: 70px;
   left: 0;
   transition: width 0.3s;
   z-index: 999;
@@ -171,8 +169,7 @@ body {
   transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .sidebar.hidden button span {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 .sidebar button span {
   opacity: 1;
@@ -257,7 +254,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  height: 100vh;
+  height: 80vh;
   width: 70vw;
 }
 .task-line {

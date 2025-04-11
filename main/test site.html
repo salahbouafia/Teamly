@@ -16,10 +16,10 @@
 				<h1 style="display: flex;"> TeamLy</h1>
 			</div>
 			<div class="account-menu" onclick="toggleAccountMenu('display')">
-                <img class="ProfilePicture" src="test.png">
+                <img class="ProfilePicture" src="test.png" alt="PFP">
                 <div class="overlay"></div>
 				<div class="account-dropdown" id="accountDropdown">
-						<img src="test.png" id="popupProfilePicture" >
+						<img src="test.png" id="popupProfilePicture"  alt="bigger PFP">
 						<div class="dropdown-buttons">
 							<button id="settings-button"><i class="fa-solid fa-gear"></i> Account Settings</button>
 							<button id="theme-button" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i> Toggle Theme</button>
@@ -32,11 +32,10 @@
         <div class="sidebar" id="sidebar">
             <button onclick="switchView('task-list')"><i class="fa-solid fa-list"></i> <span>Active Tasks</span></button>
             <button onclick="switchView('calendar')"><i class="fa-solid fa-calendar"></i> <span>Calendar</span></button>
-            <button onclick="switchView('projects')"><i class="fa-solid fa-projects"></i> <span>Projects</span></button>
-            <button onclick="switchView('notifications')"><i class="fa-solid fa-notifications"></i> <span>Notifications</span></button>
-            <button onclick="switchView('reports')"><i class="fa-solid fa-reports"></i> <span>reports</span></button>
-            <button onclick="switchView('taskHistory')"><i class="fa-solid fa-reports"></i> <span>Task History</span></button>
-
+            <button onclick="switchView('projects')"><i class="fa-solid fa-network-wired"></i> <span>Projects</span></button>
+            <button onclick="switchView('notifications')"><i class="fa-solid fa-bell"></i> <span>Notifications</span></button>
+            <button onclick="switchView('reports')"><i class="fa-solid fa-file-invoice"></i> <span>reports</span></button>
+            <button onclick="switchView('taskHistory')"><i class="fa-solid fa-clock-rotate-left"></i> <span>Task History</span></button>
         </div>
 
         <div class="main-content" id="mainContent">
@@ -45,8 +44,8 @@
             <div id="task-list-view" class="view">
                 <h2>Task List</h2>
                 <div class="task-form">
-                    <input type="text" id="newTask" placeholder="New Task">
-                    <input type="date" id="taskDate">
+                    <label for="newTask"></label><input type="text" id="newTask" placeholder="New Task">
+                    <label for="taskDate"></label><input type="date" id="taskDate">
                     <button onclick="addTask()">Add a Task +</button>
                 </div>
                 <div class="task-list">
@@ -62,7 +61,7 @@
                     <div class="task-line">
                         <div style="color: gray;">TSK-123</div>
                         <div>Doing something useful</div>
-                        <div style="display: flex;"><div style="border: 1px solid gray; border-radius: 20px; padding: 0px 4px;"> Project 1</div></div>
+                        <div style="display: flex;"><div style="border: 1px solid gray; border-radius: 20px; padding: 0 4px;"> Project 1</div></div>
                         <div>flag</div>
                         <div>Dec 5</div>
                         <div>me</div>
@@ -91,7 +90,7 @@
 				<div class="chat-header" onclick="toggleChat()">Team Chat</div>
 				<div class="chat-body" id="chatBody"></div>
 				<div class="chat-footer">
-					<input type="text" id="chatInput" placeholder="Type a message...">
+                    <label for="chatInput"></label><input type="text" id="chatInput" placeholder="Type a message...">
 					<button onclick="sendMessage()">Send</button>
 				</div>
 			</div>

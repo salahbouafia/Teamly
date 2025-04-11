@@ -8,17 +8,19 @@
 </head>
 <body>
     <div class="container">
-        <h2>Sign Up</h2>
+        <h2>Create an account</h2>
+        <p>Enter your email to sign up in our site</p>
         <div class="form-group">
-            <label for="signupUsername">Username</label>
-            <input type="text" id="signupUsername" name="signupUsername">
+            <label for="signupUsername"></label><input type="email" id="signupUsername" name="signupUsername" placeholder="email@example.com" required>
         </div>
-        <div class="form-group">
-            <label for="signupPassword">Password</label>
-            <input type="password" id="signupPassword" name="signupPassword">
+        <button onclick="signup()">Sign up with email</button>
+        <div class="divider">
+            <hr><span>or continue with</span><hr>
         </div>
-        <button onclick="signup()">Sign Up</button>
-        <p class="toggle-form"><a href="../login/login.html">Login</a></p>
+        <div class="googlebutton">
+            <img src="google.png" alt="google"> Google
+        </div>
+        <p class="toggle-form"><h5>Already have an account? then <a href="../login/login.html">Login</a></h5>
         <p id="message"></p>
     </div>
     <script src="signup.js"></script>

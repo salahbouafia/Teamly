@@ -62,6 +62,14 @@ function switchView(view) {
 
 function toggleTheme() {
   document.body.classList.toggle("dark-mode");
+
+  document.getElementById("accountDropdown").classList.toggle("dark-mode");
+  document.querySelector(".close-popup").classList.toggle("dark-mode");
+  document.getElementById("theme-button").classList.toggle("dark-mode");
+  document.getElementById("settings-button").classList.toggle("dark-mode");
+
+
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////

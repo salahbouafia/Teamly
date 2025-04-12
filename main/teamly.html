@@ -42,11 +42,22 @@
 
             <!-- Task list  -->
             <div id="task-list-view" class="view">
-                <h2>Task List</h2>
+                <h2 style="margin-bottom: 10px;">Task List</h2>
                 <div class="task-form">
                     <label for="newTask"></label><input type="text" id="newTask" placeholder="New Task">
                     <label for="taskDate"></label><input type="date" id="taskDate">
-                    <button onclick="addTask()">Add a Task +</button>
+                    <div class="flag-selector">
+                        <input type="radio" name="flag" id="green" value="#4CAF50" checked>
+                        <label for="green" class="flag green"></label>
+                        <input type="radio" name="flag" id="yellow" value="#FFEB3B">
+                        <label for="yellow" class="flag yellow"></label>
+                        <input type="radio" name="flag" id="red" value="#F44336">
+                        <label for="red" class="flag red"></label>
+                      </div>
+                      
+
+                    
+                    <button onclick="addTask()">Add a Task +</button>   
                 </div>
                 <div class="task-list">
                     <div class="task-line">

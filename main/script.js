@@ -133,66 +133,81 @@ function addTask() {
 ///////////////////////////////////////////////////////////////////////////////
 
 function updateTasks() {
-    const taskContainer = document.querySelector(".task-list");
-  
-    while (taskContainer.children.length > 2) { // del tasks but l'entête
-      taskContainer.removeChild(taskContainer.lastChild);
-    }
-  
-    tasks.forEach((task, index) => {
-      const taskLine = document.createElement("div");
-      taskLine.className = "task-line";
-  
-      const idDiv = document.createElement("div");
-      idDiv.style.color = "gray";
-      idDiv.textContent = `TSK-${index}`;
-  
-      const titleDiv = document.createElement("div");
-      titleDiv.textContent = task.title;
-  
-      const projectWrapper = document.createElement("div");
-      projectWrapper.style.display = "flex";
-  
-      const projectBadge = document.createElement("div");
-      projectBadge.style.border = "1px solid gray";
-      projectBadge.style.borderRadius = "20px";
-      projectBadge.style.padding = "0px 4px";
-      projectBadge.textContent = "Project 1";
-  
-      projectWrapper.appendChild(projectBadge);
-  
-      const priorityDiv = document.createElement("img");
-      priorityDiv.src = "../img/greenFlag.png"; // ADD IMAGE
-      priorityDiv.width = 30;
-  
-      const dateDiv = document.createElement("div");
-      dateDiv.style.color = "gray";
-      const date = new Date(task.date);
-      dateDiv.textContent = date.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-      });
-  
-      const ownerDiv = document.createElement("div");
-      ownerDiv.innerHTML = "me"; // ADD IMAGE
-  
-      const moreDiv = document.createElement("div");
-      moreDiv.textContent = "...";
-  
-      taskLine.appendChild(idDiv);
-      taskLine.appendChild(titleDiv);
-      taskLine.appendChild(projectWrapper);
-      taskLine.appendChild(priorityDiv);
-      taskLine.appendChild(dateDiv);
-      taskLine.appendChild(ownerDiv);
-      taskLine.appendChild(moreDiv);
-  
-      taskContainer.appendChild(taskLine);
-      taskContainer.appendChild(document.createElement("hr"));
-    });
+  const taskContainer = document.querySelector(".task-list");
+
+  while (taskContainer.children.length > 2) {
+    // del tasks but l'entête
+    taskContainer.removeChild(taskContainer.lastChild);
   }
-  
-  
+
+  tasks.forEach((task, index) => {
+    const taskLine = document.createElement("div");
+    taskLine.className = "task-line";
+
+    const idDiv = document.createElement("div");
+    idDiv.style.color = "gray";
+    idDiv.textContent = `TSK-${index}`;
+
+    const titleDiv = document.createElement("div");
+    titleDiv.textContent = task.title;
+
+    const projectWrapper = document.createElement("div");
+    projectWrapper.style.display = "flex";
+
+    const projectBadge = document.createElement("div");
+    projectBadge.style.border = "1px solid gray";
+    projectBadge.style.borderRadius = "20px";
+    projectBadge.style.padding = "0px 4px";
+    projectBadge.textContent = "Project 1";
+
+    projectWrapper.appendChild(projectBadge);
+
+    const priorityDiv = document.createElement("img");
+    const flagColor = document.querySelector('input[type="radio"]:checked').value;    
+    switch (flagColor) {
+      case "#4CAF50":
+        priorityDiv.src = "../img/greenFlag.png";
+        priorityDiv.width = 30;
+        break;
+      case "#FFEB3B":
+        priorityDiv.src = "../img/yellowFlag.png";
+        priorityDiv.width = 30;
+        break;
+      case "#F44336":
+        priorityDiv.src = "../img/redFlag.png";
+        priorityDiv.width = 30;
+        break;
+    }
+
+    const dateDiv = document.createElement("div");
+    dateDiv.style.color = "gray";
+    const date = new Date(task.date);
+    dateDiv.textContent = date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    });
+
+    const ownerDiv = document.createElement("img");
+    ownerDiv.src = "../img/BFF.jpg"; // ADD IMAGE
+    ownerDiv.style.borderRadius = "100%";
+    ownerDiv.width = 30;
+    ownerDiv.height = 30;
+
+    const moreDiv = document.createElement("div");
+    moreDiv.textContent = "...";
+
+    taskLine.appendChild(idDiv);
+    taskLine.appendChild(titleDiv);
+    taskLine.appendChild(projectWrapper);
+    taskLine.appendChild(priorityDiv);
+    taskLine.appendChild(dateDiv);
+    taskLine.appendChild(ownerDiv);
+    taskLine.appendChild(moreDiv);
+
+    taskContainer.appendChild(taskLine);
+    taskContainer.appendChild(document.createElement("hr"));
+  });
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 

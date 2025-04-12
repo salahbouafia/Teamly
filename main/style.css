@@ -265,6 +265,38 @@ body {
   gap: 5px;
   grid-template-columns: 100px auto 120px 70px 70px 70px 50px;
 }
+
+.flag-selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.flag-selector input[type="radio"] {
+  display: none;
+}
+
+.flag {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.green { background-color: #4CAF50; }
+.yellow { background-color: #FFEB3B; }
+.red { background-color: #F44336; }
+
+input[type="radio"]:checked + .flag {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+
+
 /* ////////////////////////////////////////////////////////////////////// */
 .chat-box.show {
   display: block;

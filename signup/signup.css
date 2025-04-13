@@ -9,9 +9,8 @@ body {
     background-image: url(background.png);
 }
 h1{
-    position: absolute;
-    z-index: 1;
-    top: 50px;
+    position: fixed;
+    top: 5%;
     font-size: 3.75rem;
     font-weight: normal;
     text-shadow: #57595c 2px 2px 4px;

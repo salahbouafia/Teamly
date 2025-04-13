@@ -11,8 +11,8 @@ body {
   transition: background 0.8s, color 0.8s;
 }
 .dark-mode {
-  background-color: #222;
-  color: gray;
+  background-color: #222 !important;
+  color: gray !important;
 }
 .container {
   display: flex;
@@ -61,15 +61,16 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30vw;
+  background-color: white;
+  width: 80vw;
+  height: 80vh;
   cursor: default;
-  max-height: 50vh;
-  background: rgba(0, 0, 0, 0.9);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   z-index: 1000;
+  transition: background 0.8s, color 0.8s;
 }
 .account-dropdown.show {
   display: block;
@@ -84,9 +85,18 @@ body {
 
 /* Image agrandie */
 .account-dropdown img {
+  margin-top: 30px;
   width: 250px;
   height: 250px;
   border-radius: 50%;
+}
+#popupName{
+ font-size: xx-large;
+ padding: 10px;
+}
+#popupRole{
+  font-size: x-large;
+  padding: 10px;
 }
 
 /* Fond semi-transparent */
@@ -113,7 +123,7 @@ body {
   background: none;
   cursor: pointer;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 25px;
   padding-right: 10px;
   z-index: 1001;
@@ -126,9 +136,9 @@ body {
 }
 
 .dropdown-buttons button {
-  background-color: #2d2d2d;
-  color: white;
-  border: 1px solid #ccc;
+  background-color: #d0d0d0;
+  color: rgb(0, 0, 0);
+  border: 1px solid #494949;
   border-radius: 5px;
   padding: 10px;
   width: 100%;
@@ -136,7 +146,7 @@ body {
 }
 
 .dropdown-buttons button:hover {
-  background-color: #3a3a3a;
+  background-color: #9a9a9a;
 }
 .sidebar {
   width: 225px;
@@ -265,6 +275,38 @@ body {
   gap: 5px;
   grid-template-columns: 100px auto 120px 70px 70px 70px 50px;
 }
+
+.flag-selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.flag-selector input[type="radio"] {
+  display: none;
+}
+
+.flag {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.green { background-color: #4CAF50; }
+.yellow { background-color: #FFEB3B; }
+.red { background-color: #F44336; }
+
+input[type="radio"]:checked + .flag {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+
+
 /* ////////////////////////////////////////////////////////////////////// */
 .chat-box.show {
   display: block;

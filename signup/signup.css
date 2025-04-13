@@ -1,3 +1,19 @@
+/* Change the design for mobile */
+@media screen and (max-width: 700px) {
+  /*mob*/
+  .container {
+    padding: 20px;
+    width: 0px;
+
+  }
+}
+@media screen and (min-width: 700px) {
+  /*PC*/
+  .container {
+    padding: 20px 120px;
+    width: 400px;
+  }
+}
 body {
     font-family: sans-serif;
     display: flex;

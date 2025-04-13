@@ -16,10 +16,12 @@
 				<h1 style="display: flex;"> TeamLy</h1>
 			</div>
 			<div class="account-menu" onclick="toggleAccountMenu('display')">
-                <img class="ProfilePicture" src="test.png" alt="PFP">
+                <img class="ProfilePicture" src="../img/BFF.jpg" alt="PFP">
                 <div class="overlay"></div>
 				<div class="account-dropdown" id="accountDropdown">
-						<img src="test.png" id="popupProfilePicture"  alt="bigger PFP">
+						<img src="../img/BFF.jpg" id="popupProfilePicture"  alt="bigger PFP">
+                        <h2 id="popupName"><i>Firstname Lastname</i></h2>
+                        <h3 id="popupRole">Role</h3>
 						<div class="dropdown-buttons">
 							<button id="settings-button"><i class="fa-solid fa-gear"></i> Account Settings</button>
 							<button id="theme-button" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i> Toggle Theme</button>
@@ -42,11 +44,22 @@
 
             <!-- Task list  -->
             <div id="task-list-view" class="view">
-                <h2>Task List</h2>
+                <h2 style="margin-bottom: 10px;">Task List</h2>
                 <div class="task-form">
                     <label for="newTask"></label><input type="text" id="newTask" placeholder="New Task">
                     <label for="taskDate"></label><input type="date" id="taskDate">
-                    <button onclick="addTask()">Add a Task +</button>
+                    <div class="flag-selector">
+                        <input type="radio" name="flag" id="green" value="#4CAF50" checked>
+                        <label for="green" class="flag green"></label>
+                        <input type="radio" name="flag" id="yellow" value="#FFEB3B">
+                        <label for="yellow" class="flag yellow"></label>
+                        <input type="radio" name="flag" id="red" value="#F44336">
+                        <label for="red" class="flag red"></label>
+                      </div>
+                      
+
+                    
+                    <button onclick="addTask()">Add a Task +</button>   
                 </div>
                 <div class="task-list">
                     <div class="task-line">

@@ -18,6 +18,7 @@ function updateCalendar() {
       .padStart(2, "0")}-${i.toString().padStart(2, "0")}`;
     const day = document.createElement("div");
     day.classList.add("day");
+    // noinspection JSValidateTypes
     day.textContent = i;
     tasks
       .filter((t) => t.date === date)
@@ -249,14 +250,3 @@ function updateTasks() {
     window.addEventListener("load", onLoad);
   }
 })();
-
-let AiChatOpen = false;
-
-function openAI() {
-  if (!AiChatOpen) {
-    window.chatbase("open");
-  } else if (AiChatOpen) {
-    window.chatbase("closeWidget");
-  }
-  AiChatOpen = !AiChatOpen;
-}

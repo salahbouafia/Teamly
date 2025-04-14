@@ -199,7 +199,6 @@ body {
   padding: 10px;
   cursor: pointer;
 }
-
 .main-content {
   flex: 1;
   padding: 90px 30px 30px 280px;
@@ -265,7 +264,7 @@ body {
   flex-direction: column;
   gap: 5px;
   height: 80vh;
-  width: 70vw;
+  width: 69vw;
 }
 .task-line {
   display: grid;
@@ -275,17 +274,14 @@ body {
   gap: 5px;
   grid-template-columns: 100px auto 120px 70px 70px 70px 50px;
 }
-
 .flag-selector {
   display: flex;
   gap: 10px;
   align-items: center;
 }
-
 .flag-selector input[type="radio"] {
   display: none;
 }
-
 .flag {
   width: 20px;
   height: 20px;
@@ -324,15 +320,15 @@ input[type="radio"]:checked + .flag {
 }
 .button-container {
   position: fixed;
-  bottom: 2px;
-  right: 2px;
+  bottom: 0;
+  right: -5px;
   width: 120px;
   height: 100px;
 }
 .chat-button,
 .iaChatbot-button {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   background: black;
   color: white;
   border: none;
@@ -341,8 +337,8 @@ input[type="radio"]:checked + .flag {
   border-radius: 50%;
   flex-direction: column; /* Stack icon and text */
   display: flex;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   box-sizing: border-box;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
@@ -360,7 +356,7 @@ input[type="radio"]:checked + .flag {
 .chat-button:hover + .iaChatbot-button,
 .button-container:hover .iaChatbot-button {
   opacity: 1;
-  transform: translateX(-80px);
+  transform: translateX(-65px);
 }
 .button-container:not(:hover) .iaChatbot-button {
   opacity: 0;
@@ -373,8 +369,8 @@ input[type="radio"]:checked + .flag {
 .swapped .iaChatbot-button {
   transform: translateX(70px);
 }
-
-.chat-button i {
+.chat-button i,
+.iaChatbot-button i{
   font-size: 24px;
 }
 

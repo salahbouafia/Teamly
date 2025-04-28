@@ -217,7 +217,7 @@ body {
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
+  gap: 5px;
   padding-top: 20px;
 }
 .calendar-controls button {
@@ -229,18 +229,30 @@ body {
 }
 .day {
   background: #e3e3e3;
-  padding: 15px;
   border-radius: 5px;
-  min-height: 100px;
+  border: 3px solid black;
+  padding: 10px;
+  min-height: 120px;
+  overflow: hidden;
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align the top content like the day number */
+  align-items: stretch;
+}
+.day:hover {
+  border: 6px solid lightblue;
 }
 .task {
-  background: #ddd;
-  padding: 5px;
+  border: 2px solid black;
+  background: peachpuff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
   border-radius: 5px;
-  margin-top: 5px;
-  font-size: 12px;
+  font-size: 15px;
 }
 .task-form {
   display: flex;

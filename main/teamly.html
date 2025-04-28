@@ -19,14 +19,44 @@
                 <img class="ProfilePicture" src="../img/BFF.jpg" alt="PFP">
                 <div class="overlay"></div>
 				<div class="account-dropdown" id="accountDropdown">
-						<img src="../img/BFF.jpg" id="popupProfilePicture"  alt="bigger PFP">
+                    <div class="left-menu">
+                        <div class="menu-item" id="editProfileButton">
+                          <span>Edit my profile</span>
+                            <hr>
+                        </div>
+                      
+                        <div class="menu-item" id="changeStatusButton">
+                          <span>Change Status</span>
+                            <hr>
+                        </div>
+                      
+                        <div class="menu-item" id="teamManagementButton">
+                          <span>Team Management</span>
+                            <hr>
+                        </div>
+                      
+                        <div class="menu-item" id="notificationsButton">
+                          <span>Notifications</span>
+                            <hr>
+                        </div>
+                      
+                        <div class="menu-item" id="changePasswordButton">
+                          <span>Change Password</span>
+                            <hr>
+                        </div>
+                      
+                        <a href="#"><div class="menu-item" id="helpSupportButton">
+                            <span>Help and Support</span>
+                          </div></a>
+                    </div>
+                      <img src="../img/BFF.jpg" id="popupProfilePicture"  alt="bigger PFP">
                         <h2 id="popupName"><i>Firstname Lastname</i></h2>
                         <h3 id="popupRole">Role</h3>
-						<div class="dropdown-buttons">
-							<button id="settings-button"><i class="fa-solid fa-gear"></i> Account Settings</button>
-							<button id="theme-button" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i> Toggle Theme</button>
-						</div>
+						<button id="theme-button" onclick="toggleTheme()">Toggle Theme</button>
 						<button class="close-popup">✖</button>
+                      
+                    
+						
 				</div>
             </div>
         </div>

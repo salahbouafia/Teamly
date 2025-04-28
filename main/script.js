@@ -250,3 +250,74 @@ function updateTasks() {
     window.addEventListener("load", onLoad);
   }
 })();
+
+
+let AiChatOpen = false;
+
+function openAI() {
+  if (!AiChatOpen) {
+    window.chatbase("open");
+  } else if (AiChatOpen) {
+    window.chatbase("closeWidget");
+  }
+  AiChatOpen = !AiChatOpen;
+}
+
+// shit code
+
+// let bigPFP = document.getElementById("popupProfilePicture");
+// let namePopup = document.getElementById("popupName")
+// let rolePopup = document.getElementById("popupRole")
+
+
+// document.getElementById("editProfileButton").addEventListener("click", function() {
+//   accountDropdown.style.backgroundColor = "#c9ffce";
+//   bigPFP.style.display = "block"
+//   bigPFP.style.justifySelf = "center"
+  
+
+// });
+
+// document.getElementById("changeStatusButton").addEventListener("click", function() {
+// let originalPFP = document.getElementById("popupProfilePicture");
+// bigPFP.style.display = "block"
+// namePopup.style.display = "none"
+// rolePopup.style.display = "none"
+
+
+
+// // Ajouter 3 nouvelles images
+// for (let i = 0; i < 3; i++) {
+//   let newImg = originalPFP.cloneNode(true);
+//   accountDropdown.appendChild(newImg);
+// }
+
+// // Mettre le container en mode grid
+// accountDropdown.style.display = "grid";
+// accountDropdown.style.gridTemplateColumns = "1fr 1fr"; // 2 colonnes
+// accountDropdown.style.gap = "10px"; // espace entre les images
+// accountDropdown.style.justifyItems = "center"; // centrer chaque image
+
+// });
+
+// document.getElementById("teamManagementButton").addEventListener("click", function() {
+//     accountDropdown.style.backgroundColor = "#c9ffce";
+//       bigPFP.style.display = "none"
+
+// });
+
+// document.getElementById("notificationsButton").addEventListener("click", function() {
+//     accountDropdown.style.backgroundColor = "#c9ffce";
+//     bigPFP.style.display = "none"
+
+// });
+
+// document.getElementById("changePasswordButton").addEventListener("click", function() {
+//     accountDropdown.style.backgroundColor = "#c9ffce";
+//     bigPFP.style.display = "none"
+
+// });
+
+// document.getElementById("helpSupportButton").addEventListener("click", function() {
+//     accountDropdown.style.backgroundColor = "#c9ffce";
+// });

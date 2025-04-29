@@ -97,14 +97,18 @@ body {
   background: linear-gradient(to bottom right, #4CAF50, #81C784);
 }
 .menu-item{
-  padding: 10px 0px;
+  padding: 10px 0;
   &:hover{
     cursor: pointer;
   }
 }
 #theme-button{
   position: absolute;
-  background-color: linear-gradient(to bottom right, #4CAF50, #81C784);
+  padding: 10px;
+  background-color: #4CAF50 !important;
+  color: white !important;
+  border-radius: 5px;
+  border: 1px solid #ccc;
   width: 200px;
   height: 50px;
   right: 30px;

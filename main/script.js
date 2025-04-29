@@ -131,8 +131,9 @@ function sendMessage() {
 function addTask() {
   const taskInput = document.getElementById("newTask");
   const taskDate = document.getElementById("taskDate").value;
+  const flagColor = document.querySelector('input[type="radio"][name="flag"]:checked').value; // Get the color when the task is added
   if (taskInput.value.trim() !== "" && taskDate) {
-    tasks.push({ title: taskInput.value, date: taskDate });
+    tasks.push({ title: taskInput.value, date: taskDate, color: flagColor }); // Store the color with the task
     updateCalendar();
     updateTasks();
     taskInput.value = "";
@@ -172,8 +173,7 @@ function updateTasks() {
     projectWrapper.appendChild(projectBadge);
 
     const priorityDiv = document.createElement("img");
-    const flagColor = document.querySelector('input[type="radio"]:checked').value;    
-    switch (flagColor) {
+    switch (task.color) {
       case "#4CAF50":
         priorityDiv.src = "../img/greenFlag.png";
         priorityDiv.width = 30;

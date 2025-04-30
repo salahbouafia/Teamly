@@ -82,16 +82,26 @@ function changeTheme(color) {
   document.querySelector('.top-bar').style.backgroundImage = `url("../img/REALfond3${color}.png")`;
   document.querySelector('.sidebar').style.backgroundImage = `url("../img/REALfond3${color}.png")`;
 
-  if(color === 'green'){
+  // shit code but works
+  if (color === 'green') {
     color = '#6bbea2';
-  }
+} else if (color === 'blue') {
+    color = 'rgba(98, 98, 254, 0.6)';
+} else if (color === 'yellow') {
+    color = 'rgba(255, 230, 0, 0.59)';
+} else if (color === 'red') {
+    color = 'rgba(244, 67, 54, 0.73)';
+} else if (color === 'pink') {
+    color = 'rgba(255, 105, 180, 0.64)';
+}
+
 
   document.querySelector('.top-bar').style.border = `5px solid ${color}`;
   document.querySelector('.sidebar').style.border = `5px solid ${color}`;
   document.getElementById('theme-button').style.backgroundColor = color;
   document.querySelector('.task-form button').style.backgroundColor = color;
-  
-  if(color === 'yellow'){
+
+  if(color === 'rgba(255, 230, 0, 0.59)'){
     document.getElementById('theme-button').style.color = 'black';
   } else {
     document.getElementById('theme-button').style.color = 'white';
@@ -100,9 +110,8 @@ function changeTheme(color) {
 
   document.querySelectorAll('.sidebar button').forEach(btn => {
     btn.style.backgroundColor = color;
-    btn.style.opacity = '0.5';
 
-    if (color === 'blue') {
+    if (color === 'rgba(98, 98, 254, 0.6)') {
       btn.style.color = 'white';
     } else {
       btn.style.color = 'black';

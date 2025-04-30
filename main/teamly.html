@@ -52,7 +52,19 @@
                         <img src="../img/BFF.jpg" id="popupProfilePicture"  alt="bigger PFP">
                         <h2 id="popupName"><i>Salah Bouafia</i></h2>
                         <h3 id="popupRole">Role</h3>
-						<button id="theme-button" onclick="toggleTheme()">Toggle Theme</button>
+                        <div class="theme-buttons">
+                            <button id="theme-button" onclick="toggleThemeMenu()">Change Theme</button>
+                            <div id="theme-menu" style="display: none; position: absolute; background: white; border: 1px solid gray; padding: 5px;">
+                              <img id="theme-choice" src="../img/REALfond3blue.png" width="10" onclick="changeTheme('blue')">
+                              <img id="theme-choice" src="../img/REALfond3pink.png" width="10" onclick="changeTheme('pink')">
+                              <img id="theme-choice" src="../img/REALfond3red.png" width="10" onclick="changeTheme('red')">
+                              <img id="theme-choice" src="../img/REALfond3yellow.png" width="10" onclick="changeTheme('yellow')">
+                              <img id="theme-choice" src="../img/REALfond3green.png" width="10" onclick="changeTheme('green')">
+                            </div>
+                            <button id="darkmode-theme-button" onclick="darkmode()">Toggle Darkmode</button>
+    
+                        </div>
+						
 						<button class="close-popup">✖</button>
 				</div>
             </div>
@@ -64,7 +76,7 @@
             <button onclick="switchView('projects')"><i class="fa-solid fa-network-wired"></i> <span>Projects</span></button>
             <button onclick="switchView('notifications')"><i class="fa-solid fa-bell"></i> <span>Notifications</span></button>
             <button onclick="switchView('reports')"><i class="fa-solid fa-file-invoice"></i> <span>reports</span></button>
-            <button onclick="switchView('taskHistory')"><i class="fa-solid fa-clock-rotate-left"></i> <span>Task History</span></button>
+            <button onclick="switchView('task-history')"><i class="fa-solid fa-clock-rotate-left"></i> <span>Task History</span></button>
         </div>
 
         <div class="main-content" id="mainContent">
@@ -84,8 +96,6 @@
                         <label for="red" class="flag red"></label>
                       </div>
                       
-
-                    
                     <button onclick="addTask()">Add a Task +</button>   
                 </div>
                 <div class="task-list">
@@ -99,16 +109,9 @@
                     </div>
                     <hr>
                     <div class="task-line">
-                        <div style="color: gray;">TSK-123</div>
-                        <div>Doing something useful</div>
-                        <div style="display: flex;"><div style="border: 1px solid gray; border-radius: 20px; padding: 0 4px;"> Project 1</div></div>
-                        <div>flag</div>
-                        <div>Dec 5</div>
-                        <div>me</div>
-                        <div>...</div>
+                        <div ></div>
+                        <div style="color: gray;">Write your first task !</div>
                     </div>
-                    <hr>
-
                 </div>
             </div>
 
@@ -122,6 +125,26 @@
                 </div>
                 <div class="calendar" id="calendar"></div>
             </div>
+
+            <!-- Task History -->
+            <div id="task-history-view" class="view" style="display: none;">
+                <h2>Task History</h2>
+                <br>
+                <div class="task-list">
+                    <div class="task-line">
+                        <div style="color: gray;">Task</div>
+                        <div>Title</div>
+                        <div>Project</div>
+                        <div>Priority</div>
+                        <div>Date</div>
+                        <div>Owner</div>
+                    </div>
+                    <hr>
+
+                </div>
+            </div>
+
+
             <div class="button-container">
                 <button class="chat-button" onclick="toggleChat()"><i class="fa-solid fa-comments"></i> <span>Chat</span></button>
                 <button class="iaChatbot-button" onclick="toggleChat()"><i class="fa-solid fa-comments"></i> <span>Chat</span></button>

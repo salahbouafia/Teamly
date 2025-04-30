@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2d2d2d url(../img/REALfond3.png) center;
+  background: #2d2d2d url(../img/REALfond3green.png) center;
   border: 5px solid #6bbea2;
   color: rgb(0, 0, 0);
   padding: 0 20px;
@@ -31,6 +31,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1000;
+  transition: 0.6s;
 }
 .logo {
   display: flex;
@@ -102,8 +103,13 @@ body {
     cursor: pointer;
   }
 }
-#theme-button{
+.theme-buttons{
   position: absolute;
+  display: flex;
+  right: 30px;
+  bottom: 30px;
+}
+#theme-button{
   padding: 10px;
   background-color: #4CAF50 !important;
   color: white !important;
@@ -111,9 +117,24 @@ body {
   border: 1px solid #ccc;
   width: 200px;
   height: 50px;
-  right: 30px;
-  bottom: 30px;
 }
+#darkmode-theme-button{
+  padding: 10px;
+  background-color: #050a05 !important;
+  color: white !important;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  height: 50px;
+}
+#theme-menu {
+  bottom: 100%;
+  margin-bottom: 10px;
+}
+#theme-choice{
+  width: 40px;
+  height: 40px;
+}
+
 
 /* Image agrandie */
 .account-dropdown img {
@@ -182,7 +203,7 @@ body {
 }
 .sidebar {
   width: 225px;
-  background: #2d2d2d url(../img/REALfond3.png) center;
+  background: #2d2d2d url(../img/REALfond3green.png) center;
   border: 5px solid #6bbea2;
   color: white;
   padding: 20px 5px;
@@ -240,6 +261,9 @@ body {
 .main-content.full-width {
   padding-left: 120px;
 }
+
+
+
 .calendar-controls {
   display: flex;
   align-items: center;
@@ -276,6 +300,18 @@ body {
 .day:hover {
   border: 6px solid lightblue;
 }
+
+/* /////////////////////////////////////////////////////////////// */
+.task-history {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 80vh;
+  width: 69vw;
+}
+
+/* /////////////////////////////////////////////////////////////// */
+
 .task {
   border: 2px solid black;
   background: peachpuff;

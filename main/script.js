@@ -56,22 +56,43 @@ function switchView(view) {
     view === "task-list" ? "block" : "none";
   document.getElementById("calendar-view").style.display =
     view === "calendar" ? "block" : "none";
+    document.getElementById("task-history-view").style.display =
+    view === "task-history" ? "block" : "none";
   updateCalendar();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 
-function toggleTheme() {
+function darkmode() {
   document.body.classList.toggle("dark-mode");
 
   document.getElementById("accountDropdown").classList.toggle("dark-mode");
   document.querySelector(".close-popup").classList.toggle("dark-mode");
   document.getElementById("theme-button").classList.toggle("dark-mode");
   document.getElementById("settings-button").classList.toggle("dark-mode");
-
-
-
 }
+
+function toggleThemeMenu() {
+  const menu = document.getElementById('theme-menu');
+  menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+}
+
+function changeTheme(color) {  
+
+  document.querySelector('.top-bar').style.backgroundImage = `url("../img/REALfond3${color}.png")`;
+  document.querySelector('.sidebar').style.backgroundImage = `url("../img/REALfond3${color}.png")`;
+
+  if(color === 'green'){
+    color = '#6bbea2';
+  }
+  
+  document.querySelector('.top-bar').style.border = `5px solid ${color}`;
+  document.querySelector('.sidebar').style.border = `5px solid ${color}`;
+  
+  document.getElementById('theme-menu').style.display = 'none';
+}
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -143,12 +164,17 @@ function addTask() {
 ///////////////////////////////////////////////////////////////////////////////
 
 function updateTasks() {
-  const taskContainer = document.querySelector(".task-list");
+  const taskContainer = document.querySelector("#task-list-view .task-list");
+  const historyContainer  = document.querySelector("#task-history-view .task-list");
 
   while (taskContainer.children.length > 2) {
     // del tasks but l'entête
     taskContainer.removeChild(taskContainer.lastChild);
   }
+  while (historyContainer.children.length > 2) {
+    historyContainer.removeChild(historyContainer.lastChild);
+  }
+  
 
   tasks.forEach((task, index) => {
     const taskLine = document.createElement("div");
@@ -215,6 +241,11 @@ function updateTasks() {
 
     taskContainer.appendChild(taskLine);
     taskContainer.appendChild(document.createElement("hr"));
+
+    // add in history
+    const taskLineClone = taskLine.cloneNode(true);
+    historyContainer.appendChild(taskLineClone);
+    historyContainer.appendChild(document.createElement("hr"));
   });
 }
 

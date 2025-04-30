@@ -111,8 +111,8 @@ body {
 }
 #theme-button{
   padding: 10px;
-  background-color: #4CAF50 !important;
-  color: white !important;
+  background-color: #4CAF50;
+  color: white;
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 200px;

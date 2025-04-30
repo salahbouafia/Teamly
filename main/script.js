@@ -85,9 +85,32 @@ function changeTheme(color) {
   if(color === 'green'){
     color = '#6bbea2';
   }
-  
+
   document.querySelector('.top-bar').style.border = `5px solid ${color}`;
   document.querySelector('.sidebar').style.border = `5px solid ${color}`;
+  document.getElementById('theme-button').style.backgroundColor = color;
+  document.querySelector('.task-form button').style.backgroundColor = color;
+  
+  if(color === 'yellow'){
+    document.getElementById('theme-button').style.color = 'black';
+  } else {
+    document.getElementById('theme-button').style.color = 'white';
+
+  }
+
+  document.querySelectorAll('.sidebar button').forEach(btn => {
+    btn.style.backgroundColor = color;
+    btn.style.opacity = '0.5';
+
+    if (color === 'blue') {
+      btn.style.color = 'white';
+    } else {
+      btn.style.color = 'black';
+
+    }
+    
+  });
+
   
   document.getElementById('theme-menu').style.display = 'none';
 }

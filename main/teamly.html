@@ -21,32 +21,32 @@
 				<div class="account-dropdown" id="accountDropdown">
                     <div class="left-menu">
                         <div class="menu-item" id="editProfileButton">
-                          <span>Edit my profile</span>
+                          <span><i class="fa-solid fa-pen-to-square"></i> Edit my profile</span>
                             <hr>
                         </div>
                       
                         <div class="menu-item" id="changeStatusButton">
-                          <span>Change Status</span>
+                          <span> <i class="fa-regular fa-circle-user"></i> Change Status</span>
                             <hr>
                         </div>
                       
                         <div class="menu-item" id="teamManagementButton">
-                          <span>Team Management</span>
+                          <span> <i class="fa-solid fa-users-rectangle"></i> Team Management</span>
                             <hr>
                         </div>
                       
                         <div class="menu-item" id="notificationsButton">
-                          <span>Notifications</span>
+                          <span> <i class="fa-solid fa-bell"></i> Notifications</span>
                             <hr>
                         </div>
                       
                         <div class="menu-item" id="changePasswordButton">
-                          <span>Change Password</span>
+                          <span> <i class="fa-solid fa-lock"></i> Change Password</span>
                             <hr>
                         </div>
                       
                         <a href="#"><div class="menu-item" id="helpSupportButton">
-                            <span>Help and Support</span>
+                            <span> <i class="fa-solid fa-circle-info"></i> Help and Support</span>
                         </div></a>
                     </div>
                         <img src="../img/BFF.jpg" id="popupProfilePicture"  alt="bigger PFP">
@@ -54,7 +54,7 @@
                         <h3 id="popupRole">Role</h3>
                         <div class="theme-buttons">
                             <button id="theme-button" onclick="toggleThemeMenu()">Change Theme</button>
-                            <div id="theme-menu" style="display: none; position: absolute; background: white; border: 1px solid gray; padding: 5px;">
+                            <div id="theme-menu" style="display: none; position: absolute; border: none; padding: 5px;">
                               <img id="theme-choice" src="../img/REALfond3blue.png" width="10" onclick="changeTheme('blue')">
                               <img id="theme-choice" src="../img/REALfond3pink.png" width="10" onclick="changeTheme('pink')">
                               <img id="theme-choice" src="../img/REALfond3red.png" width="10" onclick="changeTheme('red')">
@@ -99,8 +99,8 @@
                     <button onclick="addTask()">Add a Task +</button>   
                 </div>
                 <div class="task-list">
-                    <div class="task-line">
-                        <div style="color: gray;">Task</div>
+                    <div  class="task-line">
+                        <div >Task</div>
                         <div>Title</div>
                         <div>Project</div>
                         <div>Priority</div>
@@ -110,7 +110,7 @@
                     <hr>
                     <div class="task-line">
                         <div ></div>
-                        <div style="color: gray;">Write your first task !</div>
+                        <div>Write your first task !</div>
                     </div>
                 </div>
             </div>

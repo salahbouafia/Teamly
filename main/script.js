@@ -67,8 +67,8 @@ function darkmode() {
   document.body.classList.toggle("dark-mode");
 
   document.getElementById("accountDropdown").classList.toggle("dark-mode");
+  document.querySelector(".task-list").classList.toggle("dark-mode");
   document.querySelector(".close-popup").classList.toggle("dark-mode");
-  document.getElementById("theme-button").classList.toggle("dark-mode");
   document.getElementById("settings-button").classList.toggle("dark-mode");
 }
 
@@ -84,38 +84,43 @@ function changeTheme(color) {
 
   // shit code but works
   if (color === 'green') {
-    color = '#6bbea2';
+    color = 'rgba(107, 190, 162, 0.69)';
 } else if (color === 'blue') {
     color = 'rgba(98, 98, 254, 0.6)';
 } else if (color === 'yellow') {
-    color = 'rgba(255, 230, 0, 0.59)';
+    color = 'rgba(255, 220, 0, 0.59)';
 } else if (color === 'red') {
-    color = 'rgba(244, 67, 54, 0.73)';
+    color = 'rgba(244, 67, 54, 0.6)';
 } else if (color === 'pink') {
     color = 'rgba(255, 105, 180, 0.64)';
 }
 
-
+  document.querySelector('.left-menu').style.backgroundImage = `linear-gradient(${color}, ${color})`;
   document.querySelector('.top-bar').style.border = `5px solid ${color}`;
   document.querySelector('.sidebar').style.border = `5px solid ${color}`;
   document.getElementById('theme-button').style.backgroundColor = color;
   document.querySelector('.task-form button').style.backgroundColor = color;
 
-  if(color === 'rgba(255, 230, 0, 0.59)'){
-    document.getElementById('theme-button').style.color = 'black';
+  if(color === 'rgba(98, 98, 254, 0.6)') {
+      document.getElementById('theme-button').style.color = 'white';
+      document.querySelector('.left-menu').style.color = 'white';
   } else {
-    document.getElementById('theme-button').style.color = 'white';
-
+      document.getElementById('theme-button').style.color = 'black';
+      document.querySelector('.left-menu').style.color = 'black';
   }
 
   document.querySelectorAll('.sidebar button').forEach(btn => {
-    btn.style.backgroundColor = color;
 
     if (color === 'rgba(98, 98, 254, 0.6)') {
       btn.style.color = 'white';
     } else {
       btn.style.color = 'black';
+    }
 
+    if (color === 'rgba(107, 190, 162, 0.69)') {
+        btn.style.backgroundColor = '#a6d6c093';
+    }else {
+        btn.style.backgroundColor = color;
     }
     
   });
@@ -213,7 +218,6 @@ function updateTasks() {
     taskLine.className = "task-line";
 
     const idDiv = document.createElement("div");
-    idDiv.style.color = "gray";
     idDiv.textContent = `TSK-${index}`;
 
     const titleDiv = document.createElement("div");
@@ -247,7 +251,6 @@ function updateTasks() {
     }
 
     const dateDiv = document.createElement("div");
-    dateDiv.style.color = "gray";
     const date = new Date(task.date);
     dateDiv.textContent = date.toLocaleDateString("en-US", {
       month: "short",

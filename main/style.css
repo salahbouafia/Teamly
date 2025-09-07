@@ -12,7 +12,7 @@ body {
 }
 .dark-mode {
   background-color: #222 !important;
-  color: gray !important;
+  color: white !important;
 }
 .container {
   display: flex;
@@ -85,7 +85,7 @@ body {
 }
 .left-menu{
   display: flex;
-  color: white;
+  color: black;
   flex-direction: column;
   align-items: flex-start;
   padding-left: 30px;
@@ -95,7 +95,7 @@ body {
   left: 0;
   height: 100vh;
   width: 30%;
-  background: linear-gradient(to bottom right, #4CAF50, #81C784);
+  background-image: linear-gradient(rgba(107, 190, 162, 0.69), rgba(107, 190, 162, 0.69));
 }
 .menu-item{
   padding: 10px 0;
@@ -111,8 +111,8 @@ body {
 }
 #theme-button{
   padding: 10px;
-  background-color: #4CAF50;
-  color: white;
+    background-color: rgba(107, 190, 162, 0.69);
+  color: black;
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 200px;
@@ -284,7 +284,7 @@ body {
   border: 1px solid #ccc;
 }
 .day {
-  background: #e3e3e3;
+  background: gray;
   border-radius: 5px;
   border: 3px solid black;
   padding: 10px;
@@ -336,7 +336,7 @@ body {
 .task-form button {
   background: #a3d6c7;
   border: none;
-  color: rgb(0, 0, 0);
+  color: black;
   cursor: pointer;
 }
 .task-list {
